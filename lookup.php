@@ -1,7 +1,7 @@
 <?php
-
+        include 'secrets.php';
     if (isset($_POST['id']) || isset($_POST['email'])) {
-        $db = mysqli_connect("localhost", "root", "password1", "pieee");
+        $db = mysqli_connect("localhost", "root", MYSQL_SECRET, "pieee");
 
         if (!$db) {
             die('<p class="error">Connect Error ('.mysqli_connect_errno().') '. mysqli_connect_error()."</p>");
@@ -10,7 +10,7 @@
         if (isset($_POST['id'])) {
             $id = hash('sha512', $_POST['id']);
 
-            $query = "SELECT * FROM `membership` WHERE id='".$id."'";
+            $query = "SELECT * FROM `2018-2019` WHERE id='".$id."'";
 
             $results = $db->query($query);
 
@@ -26,7 +26,7 @@
             $email = $_POST['email'];
 
             $email = mysqli_real_escape_string($db, trim($email));
-            $query = "SELECT * FROM `membership` WHERE email LIKE '%$email%'";
+            $query = "SELECT * FROM `2018-2019` WHERE email LIKE '%$email%'";
 
             $results = $db->query($query);
 

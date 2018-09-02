@@ -1,7 +1,7 @@
 <?php
-
+        include 'secrets.php';
     if (isset($_POST['id'])) {
-        $db = mysqli_connect("localhost", "root", "password1", "pieee");
+        $db = mysqli_connect("localhost", "root", MYSQL_SECRET, "pieee");
 
         if (!$db) {
             die('<p class="error">Connect Error ('.mysqli_connect_errno().') '. mysqli_connect_error()."</p>");
@@ -13,7 +13,7 @@
 
         $id = hash('sha512', $_POST['id']);
 
-        $query = "INSERT INTO `membership` (name, email, id, enterer) VALUES ('$name', '$email', '$id', '$enterer')";
+        $query = "INSERT INTO `2018-2019` (name, email, id, enterer) VALUES ('$name', '$email', '$id', '$enterer')";
 
         $db->query($query);
 
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="form-group text-dark">
-                    <label for="id-input" style="font-size: 45px;">ID:</label>
+                    <label for="id-input" style="font-size: 45px;">Purdue ID:</label>
                     <input class="form-control input-lg" id="id-input" type="password">
                 </div>
 
@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="form-group text-dark">
-                    <label for="enterer-input" style="font-size: 45px;">Who is entering this info?</label>
+                    <label for="enterer-input" style="font-size: 45px;">Who is entering this info? (Only for officers to fill in)</label>
                     <input class="form-control input-lg" id="enterer-input" type="text">
                 </div>
             </div>

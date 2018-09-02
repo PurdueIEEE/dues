@@ -64,6 +64,9 @@
 					<li>
 						<a href="view.php">View Member</a>
 					</li>
+					<li>
+						<a href="subs.php">Manage Subscriptions</a>
+					</li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

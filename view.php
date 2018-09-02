@@ -1,13 +1,16 @@
 <?php 
-        $db = mysqli_connect("localhost", "root", "password1", "pieee");
+        include 'secrets.php';
+        $db = mysqli_connect("localhost", "root", MYSQL_SECRET, "pieee");
 
         if (!$db) {
             die('<p class="error">Connect Error ('.mysqli_connect_errno().') '. mysqli_connect_error()."</p>");
         }
 
-        $query = "SELECT * FROM `membership` ORDER BY `membership`.`name` ASC";
+        $query = "SELECT * FROM `2018-2019` ORDER BY `2018-2019`.`name` ASC";
+        $query_count = "SELECT count(*) as num_people FROM `2018-2019`";
 
         $results = $db->query($query);
+        $results_count = $db->query($query_count);
 
 ?>
 
@@ -36,6 +39,10 @@
 
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
+		<?php 
+			$count = mysqli_fetch_array($results_count);
+			echo "<h1><center>$count[num_people] Members</center></h1>";
+		?>
                 <table class="table table-striped">
                     <thead>
                       <tr>
