@@ -49,6 +49,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Enterer</th>
+                        <th>Committee</th>
                       </tr>
                     </thead>
                     <tbody> 
@@ -57,11 +58,13 @@
                             $name = $row['name'];
                             $email = $row['email'];
                             $enterer = $row['enterer'];
+                            $committee = $row['committee'];
 
                             echo "<tr>";
                                 echo "<td>$name</td>";
                                 echo "<td>$email</td>";
                                 echo "<td>$enterer</td>";
+                                echo "<td>$committee</td>";
                             echo "</tr>";
                         }
                     ?>

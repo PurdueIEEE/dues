@@ -12,8 +12,9 @@
         $enterer   = $db->real_escape_string($_POST['enterer']);
 
         $id = hash('sha512', $_POST['id']);
+        $committee   = $db->real_escape_string($_POST['committee']);
 
-        $query = "INSERT INTO `2018-2019` (name, email, id, enterer) VALUES ('$name', '$email', '$id', '$enterer')";
+        $query = "INSERT INTO `2018-2019` (name, email, id, enterer, committee) VALUES ('$name', '$email', '$id', '$enterer', '$committee')";
 
         $db->query($query);
 
@@ -43,7 +44,7 @@
     <!-- Well -->
     <div class="well">
 
-        <div id="error-box" class="row" style="display: none">>
+        <div id="error-box" class="row" style="display: none">
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="alert alert-danger"></div>
             </div>
@@ -67,6 +68,18 @@
                     <input class="form-control input-lg" id="id-input" type="password">
                 </div>
 
+                <div class="form-group text-dark">
+                    <label for="id-input" style="font-size: 45px;">Committee: </label>
+		    <select class="form-control input-lg" id="id-committee">
+			<option value="None">None</option>
+			<option value="Aerial">Aerial</option>
+			<option value="Computer Society">Computer Society</option>
+			<option value="EMBS">EMBS</option>
+			<option value="MTT-S">MTT-S</option>
+			<option value="Racing">Racing</option>
+			<option value="ROV">ROV</option>
+		    </select>
+                </div>
             </div>
         </div>
 
@@ -100,6 +113,7 @@
             var email     = $("#email-input").val();
             var id        = $("#id-input").val();
             var enterer   = $("#enterer-input").val();
+            var committee = $("#id-committee").val();
 
             var error = "";
 
@@ -135,11 +149,13 @@
                     name: name,
                     email: email,
                     id: id,
-                    enterer: enterer
+                    enterer: enterer,
+		    committee: committee
                 }, function(data) {
                      $("#name-input").val("");
                      $("#email-input").val("");
                      $("#id-input").val("");
+                     $("#id-committee").val("None");
                 });
             }
         }
