@@ -6,8 +6,8 @@
             die('<p class="error">Connect Error ('.mysqli_connect_errno().') '. mysqli_connect_error()."</p>");
         }
 
-        $query = "SELECT * FROM `2018-2019` ORDER BY `2018-2019`.`name` ASC";
-        $query_count = "SELECT count(*) as num_people FROM `2018-2019`";
+        $query = "SELECT * FROM `2019-2020` ORDER BY `2019-2020`.`name` ASC";
+        $query_count = "SELECT count(*) as num_people FROM `2019-2020`";
 
         $results = $db->query($query);
         $results_count = $db->query($query_count);
@@ -26,7 +26,7 @@
         <div class="col-lg-12">
         <h1 class="page-header"><?php echo $title ?></h1>
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a>
+                <li><a href="index.php">Home</a>
                 </li>
                 <li class="active"><?php echo $title ?></li>
             </ol>

@@ -18,7 +18,7 @@
                 return http_return(["error" => "failed to connect to mysql"], 400);
 
             $email = mysqli_real_escape_string($db, trim($params['email']));
-            $query = "SELECT * FROM `2018-2019` WHERE email = '$email'";
+            $query = "SELECT * FROM `2019-2020` WHERE email = '$email'";
             $result = $db->query($query);
             return http_return(["result" => $result->fetch_array(MYSQLI_ASSOC)]);
         }
@@ -42,7 +42,7 @@
         <div class="col-lg-12">
             <h1 class="page-header"><?php echo $title ?></h1>
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a>
+                <li><a href="index.php">Home</a>
                 </li>
                 <li class="active"><?php echo $title ?></li>
             </ol>

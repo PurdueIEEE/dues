@@ -14,7 +14,7 @@
         $id = hash('sha512', $_POST['id']);
         $committee   = $db->real_escape_string($_POST['committee']);
 
-        $query = "INSERT INTO `2018-2019` (name, email, id, enterer, committee) VALUES ('$name', '$email', '$id', '$enterer', '$committee')";
+        $query = "INSERT INTO `2019-2020` (name, email, id, enterer, committee) VALUES ('$name', '$email', '$id', '$enterer', '$committee')";
 
         $db->query($query);
 
@@ -34,7 +34,7 @@
         <div class="col-lg-12">
         <h1 class="page-header"><?php echo $title ?></h1>
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a>
+                <li><a href="index.php">Home</a>
                 </li>
                 <li class="active"><?php echo $title ?></li>
             </ol>

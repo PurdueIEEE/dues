@@ -10,7 +10,7 @@
         if (isset($_POST['id'])) {
             $id = hash('sha512', $_POST['id']);
 
-            $query = "SELECT * FROM `2018-2019` WHERE id='".$id."'";
+            $query = "SELECT * FROM `2019-2020` WHERE id='".$id."'";
 
             $results = $db->query($query);
 
@@ -26,7 +26,7 @@
             $email = $_POST['email'];
 
             $email = mysqli_real_escape_string($db, trim($email));
-            $query = "SELECT * FROM `2018-2019` WHERE email LIKE '%$email%'";
+            $query = "SELECT * FROM `2019-2020` WHERE email LIKE '%$email%'";
 
             $results = $db->query($query);
 
@@ -54,7 +54,7 @@
         <div class="col-lg-12">
         <h1 class="page-header"><?php echo $title ?></h1>
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a>
+                <li><a href="index.php">Home</a>
                 </li>
                 <li class="active"><?php echo $title ?></li>
             </ol>
