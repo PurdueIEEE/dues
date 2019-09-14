@@ -17,6 +17,7 @@
             if ($results) {
                 $row = mysqli_fetch_array($results);
                 if (count($row) == 0) {
+                    printf("PUID not found in this year's roster<BR>");
                     exit();
                 }
                 printf("Name: %s<BR>Email: %s<BR>", $row['name'], $row['email']);
@@ -69,7 +70,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="form-group text-dark">
                     <label for="inputlg" style="font-size: 45px;">Enter ID:</label>
-                    <input class="form-control input-lg" id="id-input" type="text" onkeyup="checkId(event)">
+                    <input class="form-control input-lg" id="id-input" type="password" onkeyup="checkId(event)">
                 </div>
 
                 <div class="form-group text-dark">
