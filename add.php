@@ -1,5 +1,6 @@
 <?php
-        include 'secrets.php';
+    include 'secrets.php';
+
     if (isset($_POST['id'])) {
         $db = mysqli_connect("localhost", "root", MYSQL_SECRET, "pieee");
 
@@ -70,15 +71,15 @@
 
                 <div class="form-group text-dark">
                     <label for="id-input" style="font-size: 45px;">Committee: </label>
-		    <select class="form-control input-lg" id="id-committee">
-			<option value="None">None</option>
-			<option value="Aerial">Aerial</option>
-			<option value="Computer Society">Computer Society</option>
-			<option value="EMBS">EMBS</option>
-			<option value="MTT-S">MTT-S</option>
-			<option value="Racing">Racing</option>
-			<option value="ROV">ROV</option>
-		    </select>
+            <select class="form-control input-lg" id="id-committee">
+            <option value="None">None</option>
+            <option value="Aerial">Aerial</option>
+            <option value="Computer Society">Computer Society</option>
+            <option value="EMBS">EMBS</option>
+            <option value="MTT-S">MTT-S</option>
+            <option value="Racing">Racing</option>
+            <option value="ROV">ROV</option>
+            </select>
                 </div>
             </div>
         </div>
@@ -150,7 +151,7 @@
                     email: email,
                     id: id,
                     enterer: enterer,
-		    committee: committee
+                    committee: committee
                 }, function(data) {
                      $("#name-input").val("");
                      $("#email-input").val("");
