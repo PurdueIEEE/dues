@@ -76,7 +76,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="form-group text-dark">
                     <label for="inputlg" style="font-size: 45px;">Enter ID:</label>
-                    <input class="form-control input-lg" id="id-input" type="text" onkeyup="checkId(event)">
+                    <input class="form-control input-lg" id="id-input" type="password" onkeyup="checkId(event)">
                     <span id="id-error-lookup" class="help-block" style="color: red; display: none">Could not find member by ID</span>
                     <span id="id-error-match" class="help-block" style="color: red; display: none">ID text does not match ID format</span>
                 </div>
