@@ -6,8 +6,8 @@
             die('<p class="error">Connect Error ('.mysqli_connect_errno().') '. mysqli_connect_error()."</p>");
         }
 
-        $query = "SELECT * FROM `2019-2020` ORDER BY `2019-2020`.`name` ASC";
-        $query_count = "SELECT count(*) as num_people FROM `2019-2020`";
+        $query = "SELECT * FROM `2020-2021` ORDER BY `2020-2021`.`name` ASC";
+        $query_count = "SELECT count(*) as num_people FROM `2020-2021`";
 
         $results = $db->query($query);
         $results_count = $db->query($query_count);

@@ -11,7 +11,7 @@
         if (isset($_POST['id'])) {
             $id = hash('sha512', $_POST['id']);
 
-            $query = "SELECT * FROM `2019-2020` WHERE id='".$id."'";
+            $query = "SELECT * FROM `2020-2021` WHERE id='".$id."'";
 
             $results = $db->query($query);
 
@@ -31,7 +31,7 @@
 
             $email = mysqli_real_escape_string($db, $email);
 
-            $query = "SELECT * FROM `2019-2020` WHERE email LIKE '%$email%'";
+            $query = "SELECT * FROM `2020-2021` WHERE email LIKE '%$email%'";
 
             $results = $db->query($query);
 

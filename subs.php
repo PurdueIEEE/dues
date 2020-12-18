@@ -18,7 +18,7 @@
                 return http_return(["error" => "failed to connect to mysql"], 400);
 
             $email = mysqli_real_escape_string($db, trim($params['email']));
-            $query = "SELECT * FROM `2019-2020` WHERE email = '$email'";
+            $query = "SELECT * FROM `2020-2021` WHERE email = '$email'";
             $result = $db->query($query);
             return http_return(["result" => $result->fetch_array(MYSQLI_ASSOC)]);
         }

@@ -15,7 +15,7 @@
         $id = hash('sha512', $_POST['id']);
         $committee   = $db->real_escape_string($_POST['committee']);
 
-        $query = "INSERT INTO `2019-2020` (name, email, id, enterer, committee) VALUES ('$name', '$email', '$id', '$enterer', '$committee')";
+        $query = "INSERT INTO `2020-2021` (name, email, id, enterer, committee) VALUES ('$name', '$email', '$id', '$enterer', '$committee')";
 
         $db->query($query);
 
