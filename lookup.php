@@ -122,7 +122,7 @@
                 id = id.match(/00[0-9]{8}/gm);
                 if (id != null) {
                     $.post("lookup.php", {
-                        id: id[0]
+                        id: id[0],
                         year: year
                     }, function(ret) {
                         if (ret.trim()) {
@@ -151,7 +151,7 @@
                 var index = document.getElementById("year");
                 var year = index.options[index.selectedIndex].value;
                 $.post("lookup.php", {
-                    email: email
+                    email: email,
                     year: year
                 }, function(ret) {
                     if (ret.trim()) {
