@@ -77,7 +77,7 @@
 
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <select id="year" name="year">
+                <select id="year" name="year" class="form-control" style="width: 200px; display: inline-block;">
                     <option value="2020-2021">Select Year</option>
                     <option value="2020-2021">2020 - 2021</option>
                     <option value="2019-2020">2019 - 2020</option>
