@@ -1,5 +1,6 @@
 <?php
     include 'secrets.php';
+    $year = "2020-2021";
 
     if (isset($_POST['id']) || isset($_POST['email'])) {
         $db = mysqli_connect("localhost", "root", MYSQL_SECRET, "pieee");
@@ -8,10 +9,12 @@
             die('<p class="error">Connect Error ('.mysqli_connect_errno().') '. mysqli_connect_error()."</p>");
         }
 
+        $year = $_POST['year'];
+
         if (isset($_POST['id'])) {
             $id = hash('sha512', $_POST['id']);
 
-            $query = "SELECT * FROM `2020-2021` WHERE id='".$id."'";
+            $query = "SELECT * FROM `". $year ."` WHERE id='".$id."'";
 
             $results = $db->query($query);
 
@@ -31,7 +34,7 @@
 
             $email = mysqli_real_escape_string($db, $email);
 
-            $query = "SELECT * FROM `2020-2021` WHERE email LIKE '%$email%'";
+            $query = "SELECT * FROM `". $year ."` WHERE email LIKE '%$email%'";
 
             $results = $db->query($query);
 
@@ -74,6 +77,15 @@
 
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
+                <select id="year" name="year">
+                    <option value="2020-2021">Select Year</option>
+                    <option value="2020-2021">2020 - 2021</option>
+                    <option value="2019-2020">2019 - 2020</option>
+                    <option value="2018-2019">2018 - 2019</option>
+                    <option value="2017-2018">2017 - 2018</option>
+                </select>
+                <br />
+
                 <div class="form-group text-dark">
                     <label for="inputlg" style="font-size: 45px;">Enter ID:</label>
                     <input class="form-control input-lg" id="id-input" type="password" onkeyup="checkId(event)">
@@ -90,8 +102,7 @@
         </div>
 
         <div class="row">
-            <div id ="data" class="col-lg-8 col-lg-offset-2 text-center text-dark">
-            </div>
+            <div id ="data" class="col-lg-8 col-lg-offset-2 text-center text-dark"> </div>
         </div>
 
     </div>
@@ -105,11 +116,14 @@
         function checkId(event) {
             if (event.which === 13) {
                 var id = $('#id-input').val();
+                var index = document.getElementById("year");
+                var year = index.options[index.selectedIndex].value;
 
                 id = id.match(/00[0-9]{8}/gm);
                 if (id != null) {
                     $.post("lookup.php", {
                         id: id[0]
+                        year: year
                     }, function(ret) {
                         if (ret.trim()) {
                             addData(ret)
@@ -134,8 +148,11 @@
         function checkEmail(event) {
             if (event.which === 13) {
                 var email = $('#email-input').val();
+                var index = document.getElementById("year");
+                var year = index.options[index.selectedIndex].value;
                 $.post("lookup.php", {
                     email: email
+                    year: year
                 }, function(ret) {
                     if (ret.trim()) {
                         addData(ret)
