@@ -162,7 +162,7 @@
                      $("#name-input").val("");
                      $("#email-input").val("");
                      $("#id-input").val("");
-                     $(".committees-checkbox").checked = false;
+                     //$(".committees-checkbox").checked = false; //Uncomment to reset checkboxes after submit
                 });
             }
         }
