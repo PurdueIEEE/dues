@@ -128,7 +128,6 @@
             } else {
                 committee = committee.substring(2);
             }
-            console.log(committee);
             var error = "";
 
             var namePattern  = /^([a-zA-Z0-9-_'.]+\s*){2,}$/g;
