@@ -24,16 +24,16 @@
 	<script src="js/jquery.js"></script>
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!-- WARNING: Respond.js does not work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
 	<!--favicon link-->
-	<link rel="SHORTCUT ICON" href="https://www.ieee.org/ucm/groups/webassets/@ieee/@web/@org/documents/images/ieee_favicon.ico">
-	<link rel="icon" type="image/vnd.microsoft.icon" href="https://www.ieee.org/ucm/groups/webassets/@ieee/@web/@org/documents/images/ieee_favicon.ico">
-	<link rel="apple-touch-icon" href="https://www.ieee.org/ucm/groups/webassets/@ieee/@web/@org/documents/images/ieee_apple_touch_icon.png">
+	<link rel="SHORTCUT ICON" href="/dues/favicon.ico">
+	<link rel="icon" href="/dues/favicon.ico">
+	<link rel="apple-touch-icon" href="/dues/favicon.ico">
 
 </head>
 
