@@ -11,36 +11,30 @@
 
         $year = $_POST['year'];
 
+        $foundValue = false;
+        $query = ""
         if (isset($_POST['id'])) {
+            $foundValue = true;
             $id = hash('sha512', $_POST['id']);
 
             $query = "SELECT * FROM `". $year ."` WHERE id='".$id."'";
-
-            $results = $db->query($query);
-
-            if ($results) {
-                $row = mysqli_fetch_array($results);
-                if (count($row) == 0) {
-                    exit();
-                }
-                printf("Name: %s<BR>Email: %s<BR>", $row['name'], $row['email']);
-                exit();
-            }
         } else if (isset($_POST['email'])) {
             $email = trim($_POST['email']);
             if (empty($email)) {
                 exit();
             }
+            $foundValue = true;
 
             $email = mysqli_real_escape_string($db, $email);
 
             $query = "SELECT * FROM `". $year ."` WHERE email LIKE '%$email%'";
-
+        }
+        if($foundValue) {
             $results = $db->query($query);
 
             if ($results) {
                 while($row = mysqli_fetch_array($results)) {
-                    printf("Name: %s<BR>Email: %s<BR>", $row['name'], $row['email']);
+                    printf("Name: %s<BR>Email: %s<BR>Dues Paid: %s<BR>", $row['name'], $row['email'], $row['amount_paid']);
                 }
                 exit();
             }

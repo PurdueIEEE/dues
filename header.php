@@ -64,6 +64,10 @@
 					<li>
 						<a href="view.php">View Member</a>
 					</li>
+					<!-- NEED SOME TYPE OF ACCESS CONTROL -->
+					<li>
+						<a href="treasurer.php">Treasurer</a>
+					</li>
 					<li>
 						<a href="subs.php">Manage Subscriptions</a>
 					</li>
