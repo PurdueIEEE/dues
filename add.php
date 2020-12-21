@@ -117,11 +117,18 @@
             var enterer   = $("#enterer-input").val();
 
             var committees_total = document.getElementsByClassName("committees-checkbox");
-            var committee = Array.from(committees_total).filter(committee => committee.checked).join(", ");
+            var committee = "";
+            // getElements returns an HTMLCollection, can not be handled like an Array
+            // Might be a more succinct way to do this 
+            Array.from(committees_total).filter(committee => committee.checked).forEach((element) => {
+                committee = committee.concat(", " + element.value);
+            });
             if(committee == "") {
                 committee = "None";
+            } else {
+                committee = committee.substring(2);
             }
-
+            console.log(committee);
             var error = "";
 
             var namePattern  = /^([a-zA-Z0-9-_'.]+\s*){2,}$/g;
