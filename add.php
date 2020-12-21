@@ -117,7 +117,7 @@
             var enterer   = $("#enterer-input").val();
 
             var committees_total = document.getElementsByClassName("committees-checkbox");
-            var committee = committees_total.filter(committee => committee.checked).join(", ");
+            var committee = Array.from(committees_total).filter(committee => committee.checked).join(", ");
             if(committee == "") {
                 committee = "None";
             }
