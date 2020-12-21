@@ -69,17 +69,15 @@
                     <input class="form-control input-lg" id="id-input" type="password">
                 </div>
 
-                <div class="form-group text-dark">
-                    <label for="id-input" style="font-size: 45px;">Committee: </label>
-            <select class="form-control input-lg" id="id-committee">
-            <option value="None">None</option>
-            <option value="Aerial">Aerial</option>
-            <option value="Computer Society">Computer Society</option>
-            <option value="EMBS">EMBS</option>
-            <option value="MTT-S">MTT-S</option>
-            <option value="Racing">Racing</option>
-            <option value="ROV">ROV</option>
-            </select>
+                <div class="form-group text-dark" id="committees" style="font-size: 20px;">
+                    <label for="id-input" style="font-size: 45px;">Committees: </label><br />
+                    <input type="checkbox" class="committees-checkbox" value="None" checked="checked">None</input>
+                    <input type="checkbox" class="committees-checkbox" value="Aerial Robotics">Aerial Robotics</input>
+                    <input type="checkbox" class="committees-checkbox" value="Computer Society">Computer Society</input>
+                    <input type="checkbox" class="committees-checkbox" value="EMBS">EMBS</input>
+                    <input type="checkbox" class="committees-checkbox" value="MTT-S">MTT-S</input>
+                    <input type="checkbox" class="committees-checkbox" value="Racing">Racing</input>
+                    <input type="checkbox" class="committees-checkbox" value="ROV">ROV</input>
                 </div>
             </div>
         </div>
@@ -114,7 +112,15 @@
             var email     = $("#email-input").val();
             var id        = $("#id-input").val();
             var enterer   = $("#enterer-input").val();
-            var committee = $("#id-committee").val();
+
+            var committees_total = document.getElementsByClassName("committees-checkbox");
+            var committee = "";
+            for(var i = 0; i < committees_total.length; ++i) {
+                if(committees_total[i].checked) {
+                    committee = committee.concat(", "  + committees_total[i].value);
+                }
+            }
+            committee = committee.substring(1);
 
             var error = "";
 
