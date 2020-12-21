@@ -71,16 +71,39 @@
 
                 <div class="form-group text-dark" id="committees" style="font-size: 20px;">
                     <label for="id-input" style="font-size: 45px;">Committees: </label><br />
-                    <input type="checkbox" class="committees-checkbox" value="Aerial Robotics">Aerial Robotics</input>
-                    <input type="checkbox" class="committees-checkbox" value="Computer Society">Computer Society</input>
-                    <input type="checkbox" class="committees-checkbox" value="EMBS">EMBS</input>
-                    <input type="checkbox" class="committees-checkbox" value="MTT-S">MTT-S</input>
-                    <input type="checkbox" class="committees-checkbox" value="Racing">Racing</input>
-                    <input type="checkbox" class="committees-checkbox" value="ROV">ROV</input>
-                    <input type="checkbox" class="committees-checkbox" value="Growth and Engagement">Growth and Engagement</input>
-                    <input type="checkbox" class="committees-checkbox" value="Industrial Relations">Industrial Relations</input>
-                    <input type="checkbox" class="committees-checkbox" value="Learning">Learning</input>
-                    <input type="checkbox" class="committees-checkbox" value="Social">Social</input>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="Aerial Robotics">Aerial Robotics</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="Computer Society">Computer Society</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="EMBS">EMBS</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="MTT-S">MTT-S</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="Racing">Racing</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="ROV">ROV</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="Software Saturdays">Software Saturdays</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="Growth and Engagement">Growth and Engagement</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="Industrial Relations">Industrial Relations</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="Learning">Learning</input>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="committees-checkbox" value="Social">Social</input>
+                    </div>
                 </div>
             </div>
         </div>
