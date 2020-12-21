@@ -71,13 +71,16 @@
 
                 <div class="form-group text-dark" id="committees" style="font-size: 20px;">
                     <label for="id-input" style="font-size: 45px;">Committees: </label><br />
-                    <input type="checkbox" class="committees-checkbox" value="None" checked="checked">None</input>
                     <input type="checkbox" class="committees-checkbox" value="Aerial Robotics">Aerial Robotics</input>
                     <input type="checkbox" class="committees-checkbox" value="Computer Society">Computer Society</input>
                     <input type="checkbox" class="committees-checkbox" value="EMBS">EMBS</input>
                     <input type="checkbox" class="committees-checkbox" value="MTT-S">MTT-S</input>
                     <input type="checkbox" class="committees-checkbox" value="Racing">Racing</input>
                     <input type="checkbox" class="committees-checkbox" value="ROV">ROV</input>
+                    <input type="checkbox" class="committees-checkbox" value="Growth and Engagement">Growth and Engagement</input>
+                    <input type="checkbox" class="committees-checkbox" value="Industrial Relations">Industrial Relations</input>
+                    <input type="checkbox" class="committees-checkbox" value="Learning">Learning</input>
+                    <input type="checkbox" class="committees-checkbox" value="Social">Social</input>
                 </div>
             </div>
         </div>
@@ -114,13 +117,10 @@
             var enterer   = $("#enterer-input").val();
 
             var committees_total = document.getElementsByClassName("committees-checkbox");
-            var committee = "";
-            for(var i = 0; i < committees_total.length; ++i) {
-                if(committees_total[i].checked) {
-                    committee = committee.concat(", "  + committees_total[i].value);
-                }
+            var committee = committees_total.filter(committee => committee.checked).join(", ");
+            if(committee == "") {
+                committee = "None";
             }
-            committee = committee.substring(1);
 
             var error = "";
 
