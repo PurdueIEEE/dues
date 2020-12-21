@@ -3,7 +3,7 @@
     $year = "2021-2022";
 
     if (isset($_POST['id']) || isset($_POST['email'])) {
-        $db = mysqli_connect("localhost", "root", MYSQL_SECRET, "pieee");
+        $db = mysqli_connect("localhost", "root", MYSQL_SECRET, $dbname);
 
         if (!$db) {
             die('<p class="error">Connect Error ('.mysqli_connect_errno().') '. mysqli_connect_error()."</p>");

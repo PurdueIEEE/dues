@@ -1,6 +1,6 @@
 <?php
     include 'secrets.php';
-    $db = mysqli_connect("localhost", "root", MYSQL_SECRET, "pieee");
+    $db = mysqli_connect("localhost", "root", MYSQL_SECRET, $dbname);
 
     if (!$db) {
         die('<p class="error">Connect Error ('.mysqli_connect_errno().') '. mysqli_connect_error()."</p>");
