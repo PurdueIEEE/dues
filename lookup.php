@@ -76,14 +76,15 @@
     <div class="well">
 
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <select id="year" name="year" class="form-control" style="width: 200px; display: inline-block;">
-                    <option value="2020-2021">Select Year</option>
+            <div class="col-lg-8 col-lg-offset-2 text-dark">
+                <select id="year" name="year" class="form-control" style="width: 200px; display: inline-block;" onchange="switchYear(event)">
+                    <option disabled="disabled" selected="selected" value="">Select Year</option>
                     <option value="2020-2021">2020 - 2021</option>
                     <option value="2019-2020">2019 - 2020</option>
                     <option value="2018-2019">2018 - 2019</option>
                     <option value="2017-2018">2017 - 2018</option>
                 </select>
+                <span id="year-error" class="help-block" style="color: red; display: none">Select a year</span>
                 <br />
 
                 <div class="form-group text-dark">
@@ -118,6 +119,10 @@
                 var id = $('#id-input').val();
                 var index = document.getElementById("year");
                 var year = index.options[index.selectedIndex].value;
+                if(year == "") {
+                    $("#year-error").show();
+                    return;
+                }
 
                 id = id.match(/00[0-9]{8}/gm);
                 if (id != null) {
@@ -150,6 +155,10 @@
                 var email = $('#email-input').val();
                 var index = document.getElementById("year");
                 var year = index.options[index.selectedIndex].value;
+                if(year == "") {
+                    $("#year-error").show();
+                    return;
+                }
                 $.post("lookup.php", {
                     email: email,
                     year: year
@@ -169,6 +178,10 @@
 
         function addData(data) {
             $("#data").prepend(`<h2>${data}</h2>`)
+        }
+
+        function switchYear(event) {
+            $("#year-error").hide();
         }
     </script>
 
