@@ -72,6 +72,7 @@
                             <th>Email</th>
                             <th>Enterer</th>
                             <th>Committee</th>
+                            <th>Dues Paid</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,12 +82,14 @@
                                 $email = $row['email'];
                                 $enterer = $row['enterer'];
                                 $committee = $row['committee'];
+                                $amount_paid = $row['amount_paid'];
 
                                 echo "<tr>";
                                     echo "<td>$name</td>";
                                     echo "<td>$email</td>";
                                     echo "<td>$enterer</td>";
                                     echo "<td>$committee</td>";
+                                    echo "<td>$amount_paid</td>"
                                 echo "</tr>";
                             }
                         ?>
