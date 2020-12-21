@@ -13,7 +13,7 @@
 
         // Ad-hoc dues verification.
         if ($method === 'dues') {
-            $db = mysqli_connect("localhost", "root", MYSQL_SECRET, "pieee");
+            $db = mysqli_connect("localhost", "root", MYSQL_SECRET, $dbname);
             if (!$db)
                 return http_return(["error" => "failed to connect to mysql"], 400);
 
