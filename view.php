@@ -41,7 +41,8 @@
             <div class="col-lg-10">
             <form method="post" action="" class="text-dark">
                 <select name="year" class="form-control" style="width: 200px; display: inline-block;">
-                    <option value="2020-2021">Select Year</option>
+                    <option value="2021-2022">Select Year</option>
+                    <option value="2021-2022">2021 - 2022</option>
                     <option value="2020-2021">2020 - 2021</option>
                     <option value="2019-2020">2019 - 2020</option>
                     <option value="2018-2019">2018 - 2019</option>
