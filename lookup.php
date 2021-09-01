@@ -1,6 +1,6 @@
 <?php
     include 'secrets.php';
-    $year = "2020-2021";
+    $year = "2021-2022";
 
     if (isset($_POST['id']) || isset($_POST['email'])) {
         $db = mysqli_connect("localhost", "root", MYSQL_SECRET, "pieee");
@@ -79,6 +79,7 @@
             <div class="col-lg-8 col-lg-offset-2 text-dark">
                 <select id="year" name="year" class="form-control" style="width: 200px; display: inline-block;" onchange="switchYear(event)">
                     <option disabled="disabled" selected="selected" value="">Select Year</option>
+                    <option value="2021-2022">2021 - 2022</option>
                     <option value="2020-2021">2020 - 2021</option>
                     <option value="2019-2020">2019 - 2020</option>
                     <option value="2018-2019">2018 - 2019</option>
