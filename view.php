@@ -7,12 +7,14 @@
     }
     if(isset($_POST['year'])) {
         $year = $_POST['year'];
-        $query = "SELECT * FROM `". $year ."` ORDER BY `". $year ."`.`name` ASC";
-        $query_count = "SELECT count(*) as num_people FROM `". $year ."`";
-
-        $results = $db->query($query);
-        $results_count = $db->query($query_count);
+    } else {
+        $year = "2021-2022";
     }
+    $query = "SELECT * FROM `". $year ."` ORDER BY `". $year ."`.`name` ASC";
+    $query_count = "SELECT count(*) as num_people FROM `". $year ."`";
+
+    $results = $db->query($query);
+    $results_count = $db->query($query_count);
 ?>
 
 
